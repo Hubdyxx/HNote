@@ -8,8 +8,46 @@
 import SwiftUI
 
 struct RejestracjaView: View {
+    
+    @StateObject var viewModel = RegisterViewViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            HeaderView(text: "Rejestracja", 
+                       angle: -15,
+                       background: .red)
+            .padding(.top,70)
+            
+            Form{
+                TextField("Imię:",text: $viewModel.name)
+                    .textFieldStyle(DefaultTextFieldStyle())
+                    .autocorrectionDisabled()
+
+                TextField("Adres Email:",text: $viewModel.email)
+                    .textFieldStyle(DefaultTextFieldStyle())
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled()
+                SecureField("Hasło:",text: $viewModel.password)
+                    .textFieldStyle(DefaultTextFieldStyle())
+                
+                HNButton(
+                    title: "Zarejestruj się!",
+                    background: .red
+                ){
+                    viewModel.register()
+                    // proba rejestrowania sie
+                }
+                
+                .padding()
+                
+                
+            }
+            
+            .offset(y: -50)
+            
+            Spacer()
+        }
     }
 }
 

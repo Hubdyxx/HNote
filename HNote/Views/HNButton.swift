@@ -8,11 +8,31 @@
 import SwiftUI
 
 struct HNButton: View {
+    
+    let title: String
+    let background: Color
+    let action: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button{
+            //akcje
+            action()
+        } label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(background)
+                
+                Text(title)
+                    .foregroundColor(Color.white)
+                    .bold()
+            }
+        }
+        
+    }
+}
+#Preview{
+    HNButton(title: "value", background: .red){
+    //akcja
     }
 }
 
-#Preview {
-    HNButton()
-}

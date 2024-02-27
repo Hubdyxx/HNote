@@ -8,11 +8,51 @@
 import SwiftUI
 
 struct NewItemsView: View {
+    
+    @StateObject var viewModel = NewItemsViewViewModel()
+    @Binding var newItemPresented: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Dodaj przypomnienie")
+                .font(.system(size:32))
+                .bold()
+                .padding(.top, 100)
+            
+            Form {
+                //tytul
+                TextField("Tytuł", text: $viewModel.title)
+                    .textFieldStyle(DefaultTextFieldStyle())
+                //data
+                DatePicker("Wybierz datę", selection: $viewModel.dueDate)
+                    .datePickerStyle(GraphicalDatePickerStyle())
+                //button
+                HNButton(title: "Zapisz",
+                         background: .green) 
+                {
+                    if viewModel.canSave {
+                        viewModel.save()
+                        newItemPresented = false
+                    } else{
+                        viewModel.showAlert = true
+                    }
+                    //zamyka na widok po wcisnieciu save
+                }
+                         .padding()
+            }
+            .alert(isPresented: $viewModel.showAlert) {
+                Alert(title: Text("Błąd!"),
+                      message: Text ("Wypełnij wszystkie pola oraz zaznacz datę nie starszą niż dzisiejsza."))
+            }
+            
+        }
     }
 }
-
+//widok dodania nowego przypomnienia
 #Preview {
-    NewItemsView()
+    NewItemsView(newItemPresented: Binding(get: {
+        return true
+    }, set: { _ in
+        
+    }))
 }

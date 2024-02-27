@@ -8,13 +8,40 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @StateObject var viewModel = MainViewViewModel()
+    
     var body: some View {
-        NavigationView {
+        if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
+            accountView
+        } else {
             LogowanieView()
+        }
+    }
+    
+    @ViewBuilder
+    var accountView: some View {
+        TabView{
+            HNoteListView(userId: viewModel.currentUserId)
+                .tabItem {
+                    Label("Start",systemImage: "house")
+                }
+            NotesListView(viewModel: NotesListViewModel())
+                            .tabItem {
+                                Label("Notatki", systemImage: "note.text")
+                            }
+            ProfileView()
+                .tabItem {
+                    Label("Profil",systemImage: "person.circle")
+                }
+            
         }
     }
 }
 
-#Preview {
-    MainView()
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+    }
 }
+
