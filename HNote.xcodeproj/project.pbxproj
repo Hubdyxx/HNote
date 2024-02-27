@@ -55,6 +55,7 @@
 		6A6F09FF2B8A7AF5001E6D28 /* RejestracjaViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6F09FE2B8A7AF5001E6D28 /* RejestracjaViewViewModel.swift */; };
 		6A6F0A012B8A7B16001E6D28 /* HNoteListItemsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6F0A002B8A7B16001E6D28 /* HNoteListItemsViewViewModel.swift */; };
 		6A6F0A032B8A7FB4001E6D28 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6F0A022B8A7FB4001E6D28 /* HeaderView.swift */; };
+		6A6F0A052B8E72F7001E6D28 /* HNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6F0A042B8E72F7001E6D28 /* HNButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		6A6F09FE2B8A7AF5001E6D28 /* RejestracjaViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejestracjaViewViewModel.swift; sourceTree = "<group>"; };
 		6A6F0A002B8A7B16001E6D28 /* HNoteListItemsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNoteListItemsViewViewModel.swift; sourceTree = "<group>"; };
 		6A6F0A022B8A7FB4001E6D28 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		6A6F0A042B8E72F7001E6D28 /* HNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				6A6F09E42B8A7799001E6D28 /* ProfileView.swift */,
 				6A6F09E62B8A7836001E6D28 /* HNoteListView.swift */,
 				6A6F09E82B8A7868001E6D28 /* NewItemsView.swift */,
+				6A6F0A042B8E72F7001E6D28 /* HNButton.swift */,
 				6A6F09EA2B8A789A001E6D28 /* LogowanieView.swift */,
 				6A6F09EC2B8A78AF001E6D28 /* RejestracjaView.swift */,
 				6A6F09EE2B8A79AE001E6D28 /* HNoteListItemsView.swift */,
@@ -312,6 +315,7 @@
 				6A6F09E92B8A7868001E6D28 /* NewItemsView.swift in Sources */,
 				6A6F09F52B8A7A83001E6D28 /* MainViewViewModel.swift in Sources */,
 				6A6F09EF2B8A79AE001E6D28 /* HNoteListItemsView.swift in Sources */,
+				6A6F0A052B8E72F7001E6D28 /* HNButton.swift in Sources */,
 				6A6F09E52B8A779A001E6D28 /* ProfileView.swift in Sources */,
 				6A6F0A012B8A7B16001E6D28 /* HNoteListItemsViewViewModel.swift in Sources */,
 				6A6F09F72B8A7A97001E6D28 /* ProfileViewViewModel.swift in Sources */,
@@ -458,6 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HNote/Preview Content\"";
+				DEVELOPMENT_TEAM = N9A5MF2D8H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = HNote;
@@ -486,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HNote/Preview Content\"";
+				DEVELOPMENT_TEAM = N9A5MF2D8H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = HNote;

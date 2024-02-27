@@ -13,22 +13,44 @@ struct LogowanieView: View {
     @State var password = ""
     
     var body: some View {
-        VStack{
-            //Nagłówek
-            HeaderView()
-            //Logowanie
-            Form{
-                TextField("Adres Email", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                SecureField("Hasło", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+        NavigationView{
+            VStack{
+                //Nagłówek
+                HeaderView(text: "HNote",
+                           angle: 15,
+                           background: .blue)
+                //Logowanie
+                Form{
+                    TextField("Adres Email", text: $email)
+                        .textFieldStyle(DefaultTextFieldStyle())
+                    SecureField("Hasło", text: $password)
+                        .textFieldStyle(DefaultTextFieldStyle())
+                    
+                    HNButton(
+                        title: "Zaloguj się",
+                        background: .blue){
+                        // proba zalogowania sie
+                    }
+                    .padding()
+                }
+                .offset(y: -50)
+                //Tworzenie konta
+                
+                VStack {
+                    Text("Nie masz konta?")
+                    
+                    NavigationLink("Utwórz konto!",
+                                   destination: RejestracjaView())
+                }
+                .padding(.bottom,50)
+                
+                Spacer()
             }
             
-            //Tworzenie konta
-            
-            Spacer()
         }
+        
     }
+   
 }
 
 #Preview {
