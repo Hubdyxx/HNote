@@ -31,7 +31,7 @@ struct HNButton: View {
     }
 }
 #Preview{
-    HNButton(title: "value", background: .red){
+    HNButton(title: "Zarejestruj się", background: .red){
     //akcja
     }
 }
